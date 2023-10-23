@@ -18,8 +18,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             JetSampleTheme {
                 // A surface container using the 'background' color from the theme
+                val modifier = Modifier
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
                     Greeting("Android", modifier)
