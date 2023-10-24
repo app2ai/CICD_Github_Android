@@ -71,7 +71,7 @@ fun BasicForm(modifier: Modifier = Modifier) {
                     propMap.put("password", password.value)
                     Analytics.trackEvent("button_click_valid_username_or_password", propMap)
                 }
-            }) {
+            }, modifier = modifier.padding(top = 16.dp)) {
                 Text(text = "Click Me")
             }
         }
