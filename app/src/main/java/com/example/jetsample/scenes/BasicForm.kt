@@ -2,16 +2,13 @@ package com.example.jetsample.scenes
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -34,19 +31,19 @@ fun BasicForm(modifier: Modifier = Modifier) {
     var password = remember{ mutableStateOf("") }
     var propMap = mutableMapOf<String, String>()
     Card(
-        shape = RoundedCornerShape(6.dp),
+        shape = RoundedCornerShape(8.dp),
         modifier = modifier.padding(4.dp)
-            .fillMaxWidth(0.7f)
-            .wrapContentHeight(Alignment.CenterVertically))
+            .wrapContentHeight()
+    )
     {
         Column(
-            verticalArrangement = Arrangement.SpaceAround,
+            verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = modifier.padding(16.dp)
         ) {
             Text(
                 text = "Login Page",
-                modifier = modifier.wrapContentWidth(),
+                modifier = modifier.wrapContentWidth().padding(bottom = 20.dp),
                 fontSize = TextUnit(24.0f, TextUnitType.Sp),
                 fontWeight = FontWeight.Normal
             )
