@@ -19,11 +19,15 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.ExperimentalUnitApi
+import androidx.compose.ui.unit.TextUnit
+import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
 import com.microsoft.appcenter.analytics.Analytics
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalUnitApi::class)
 @Composable
 fun BasicForm(modifier: Modifier = Modifier) {
     var username = remember{ mutableStateOf("") }
@@ -42,7 +46,9 @@ fun BasicForm(modifier: Modifier = Modifier) {
         ) {
             Text(
                 text = "Login Page",
-                modifier = modifier.wrapContentWidth()
+                modifier = modifier.wrapContentWidth(),
+                fontSize = TextUnit(24.0f, TextUnitType.Sp),
+                fontWeight = FontWeight.Normal
             )
             TextField(value = username.value, onValueChange = {
                 username.value = it
